@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+    public GameObject Canvas;
 
-	public float move_speed;
-	Rigidbody2D rb;
+    public float move_speed;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,31 @@ public class player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       float horizontal = Input.GetAxisRaw("Horizontal");
-       float vertical = Input.GetAxisRaw("Vertical");
+        if (Canvas.activeInHierarchy)
+        {
+            return;
+        }
 
-	rb.velocity = new Vector2(horizontal * move_speed, vertical * move_speed);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        rb.velocity = new Vector2(horizontal * move_speed, vertical * move_speed);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

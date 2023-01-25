@@ -17,7 +17,7 @@ public class change_scene : MonoBehaviour
 
 		yield return new WaitForSeconds(1/2);
 			
-		Debug.Log(application_vars.item_count);
+		Debug.Log(application_vars.patients_saved);
 
 		if (SceneManager.GetActiveScene().name == "first_scene")
 		{
@@ -44,7 +44,7 @@ Debug.Log("Ummmmm wtf this shouldn't be happening");
 break;
 		}
 
-		Debug.Log(application_vars.item_count);
+		Debug.Log(application_vars.patients_saved);
 	}
 
 

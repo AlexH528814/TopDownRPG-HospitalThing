@@ -7,19 +7,45 @@ public class pickup_item : MonoBehaviour
 	public GameObject obj;
 
 
-	public string obj_name = "drug_item";
+	public string obj_name = "name";
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player"))
-				{
-				Destroy(obj);
+		{
 
-				application_vars.player_has_item = true;
-				application_vars.item_count++;
-				}
-		Debug.Log($"Picked up {obj_name}");
-	}
+            if (obj_name == "pneumonia medicine" && !application_vars.has_pneumonia_medicine && !application_vars.has_item)
+            {
+                Debug.Log("Pickeup up pneumonia medicine");
+                Destroy(obj);
+                application_vars.has_pneumonia_medicine = true;
+                application_vars.current_item = "pneumonia";
+                application_vars.has_item = true;
+            }
+
+            else if (obj_name == "pneumonia medicine" && application_vars.has_item)
+            {
+                Debug.Log("You only have enough space for one type of medicine at a time. Please drop the medicine you currently have with Q");
+            }
+
+            if (obj_name == "cold medicine" && !application_vars.has_cold_medicine && !application_vars.has_item)
+            {
+                Debug.Log("Pickeup up cold medicine");
+                Destroy(obj);
+                application_vars.has_cold_medicine = true;
+                application_vars.current_item = "cold";
+                application_vars.has_item = true;
+            }
+
+            else if (obj_name == "cold medicine" && application_vars.has_item)
+            {
+                Debug.Log("You only have enough space for one type of medicine at a time. Please drop the medicine you currently have with Q");
+            }
+        }
+
+
+
+    }
 
 
 }

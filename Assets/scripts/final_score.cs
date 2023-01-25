@@ -11,7 +11,7 @@ public class final_score : MonoBehaviour
 
 	void Start()
 	{
-		score_text.SetText($"Your final score is: {application_vars.item_count * 100}");
+		score_text.SetText($"Your final score is: {application_vars.patients_saved * 100}");
 	}
 
 	void Update()
