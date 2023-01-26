@@ -2,27 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class button_optiona : MonoBehaviour
+public class button_options : MonoBehaviour
 {
-    public GameObject Canvas;
-    public GameObject symptoms;
-    public GameObject face;
-    public GameObject dialogue;
-    void Correct_Option()
-    {
-        Debug.Log("You chose the correct option");
-    }
+    	public GameObject Canvas;
+    	public GameObject face;
+    	public GameObject dialogue;
 
-    void Incorrect_Option()
-    {
-        Debug.Log("You chose the incorrect option");
-    }
+	public GameObject cold_symptoms;
+	public GameObject pneumonia_symptoms;
+	public GameObject unnamed_symptoms;
+	public GameObject depression_symptoms;
+	public GameObject trauma_symptoms;
+
+
+
+
+    void HealOption()
+	{
+		
+	}
 
     void Leave_Option()
     {
         Canvas.SetActive(false);
-        symptoms.SetActive(false);
         face.SetActive(false);
         dialogue.SetActive(false);
+    
+
+        cold_symptoms.SetActive(false);
+        pneumonia_symptoms.SetActive(false);
+        depression_symptoms.SetActive(false);
+        trauma_symptoms.SetActive(false);
     }
+
 }
