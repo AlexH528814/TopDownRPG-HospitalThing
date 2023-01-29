@@ -10,7 +10,6 @@ public class button_options : MonoBehaviour
 
 	public GameObject cold_symptoms;
 	public GameObject pneumonia_symptoms;
-	public GameObject unnamed_symptoms;
 	public GameObject depression_symptoms;
 	public GameObject trauma_symptoms;
 

@@ -11,7 +11,7 @@ public class clipboard_interact : MonoBehaviour
     public Transform playerTransform;
     public Transform interactionTransform;
 
-    public bool isInRadius;
+    public string patient_name;	
 
     public GameObject Canvas;
     public GameObject symptoms;
@@ -35,6 +35,21 @@ public class clipboard_interact : MonoBehaviour
         if (distance <= radius)
         {
             StartCoroutine(CheckInput());
+
+	    switch (patient_name)
+	    {
+		case "patient1":
+			application_vars.patient1_radius = true;
+			break;
+		case "patient2":
+			application_vars.patient2_radius = true;
+			break;
+		case "patient3":
+			application_vars.patient3_radius = true;
+			break;
+		case "patient4":
+			application_vars.patient4_radius = true;
+			break;}
         }
     }
 

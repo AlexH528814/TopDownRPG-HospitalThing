@@ -19,30 +19,16 @@ public class change_scene : MonoBehaviour
 			
 		Debug.Log(application_vars.patients_saved);
 
-		if (SceneManager.GetActiveScene().name == "first_scene")
+		if (SceneManager.GetActiveScene().name == "hospital_room")
 		{
-		SceneManager.LoadScene("second_scene");
+		SceneManager.LoadScene("medical_room");
 		}
 		
-		if (SceneManager.GetActiveScene().name == "second_scene")
+		if (SceneManager.GetActiveScene().name == "medical_room")
 		{
-			SceneManager.LoadScene("first_scene");
+			SceneManager.LoadScene("hospital_room");
 		}
 
-		switch(SceneManager.GetActiveScene().name)
-		{
-			case "first_scene":
-		SceneManager.LoadScene("first_scene");
-				break;
-
-			case "second_scene":
-		SceneManager.LoadScene("second_scene");
-				break;
-
-			default:
-Debug.Log("Ummmmm wtf this shouldn't be happening");
-break;
-		}
 
 		Debug.Log(application_vars.patients_saved);
 	}
