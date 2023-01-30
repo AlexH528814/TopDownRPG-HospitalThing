@@ -36,6 +36,8 @@ public class button_options : MonoBehaviour
 		}
 
 		else {
+			LeaveOption();
+			Canvas.SetActive(true);
 			missing_medicine.SetActive(true);
 			yield return new WaitForSeconds(3f);
 			LeaveOption();
@@ -53,6 +55,8 @@ public class button_options : MonoBehaviour
 			application_vars.patient1_saved = true;
 		}
 		else {
+			LeaveOption();
+			Canvas.SetActive(true);
 			missing_medicine.SetActive(true);
 			yield return new WaitForSeconds(3f);
 			LeaveOption();
@@ -68,11 +72,15 @@ public class button_options : MonoBehaviour
 	patient2_dialogue.SetActive(false);
 	patient3_dialogue.SetActive(false);
 	patient4_dialogue.SetActive(false);
-
+	patient1_saved_box.SetActive(false);
+	patient2_saved_box.SetActive(false);
+	patient3_saved_box.SetActive(false);
+	patient4_saved_box.SetActive(false);
         cold_symptoms.SetActive(false);
         pneumonia_symptoms.SetActive(false);
         depression_symptoms.SetActive(false);
         trauma_symptoms.SetActive(false);
+	missing_medicine.SetActive(false);
     }
 
 
