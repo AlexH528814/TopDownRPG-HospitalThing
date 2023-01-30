@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/medicine_room.unity
     guid: 9e4848fd7b4ca82bbb1353cc395a0c88
-  - enabled: 1
-    path: Assets/Scenes/end_scene.unity
-    guid: d473b8be8e72d4b719ad72730d8503de
   m_configObjects: {}
