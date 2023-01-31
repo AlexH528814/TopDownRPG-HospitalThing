@@ -6,7 +6,6 @@ public class drop_item : MonoBehaviour
 {
     public GameObject pneumonia_object;
     public GameObject cold_object;
-    public Transform player_transform;
 
     private void Update()
     {
@@ -14,12 +13,18 @@ public class drop_item : MonoBehaviour
         {
             if (application_vars.current_item == "pneumonia")
             {
-                Instantiate(pneumonia_object, new Vector3(0, 0, 0), Quaternion.identity, player_transform);
+                Instantiate(pneumonia_object, new Vector3(8.08f , -8.62f , 0), Quaternion.identity);
+		application_vars.current_item = null;
+		application_vars.has_item = false;
+		application_vars.has_pneumonia_medicine = false;
             }
 
-            if (application_vars.current_item == "")
+            if (application_vars.current_item == "cold")
             {
-                Instantiate(cold_object, new Vector3(0,0,0), Quaternion.identity, player_transform);
+                Instantiate(cold_object, new Vector3(-8.08f, -8.92f , 0), Quaternion.identity);
+		application_vars.current_item = null;
+		application_vars.has_item = false;
+		application_vars.has_cold_medicine = false;
             }
         }
     }

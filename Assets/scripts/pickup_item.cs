@@ -5,6 +5,7 @@ using UnityEngine;
 public class pickup_item : MonoBehaviour
 {
 	public GameObject obj;
+	public GameObject droptext;
 
 
 	public string obj_name = "name";
@@ -26,6 +27,7 @@ public class pickup_item : MonoBehaviour
             else if (obj_name == "pneumonia medicine" && application_vars.has_item)
             {
                 Debug.Log("You only have enough space for one type of medicine at a time. Please drop the medicine you currently have with Q");
+		StartCoroutine(DropItemText());
             }
 
             if (obj_name == "cold medicine" && !application_vars.has_cold_medicine && !application_vars.has_item)
@@ -40,6 +42,7 @@ public class pickup_item : MonoBehaviour
             else if (obj_name == "cold medicine" && application_vars.has_item)
             {
                 Debug.Log("You only have enough space for one type of medicine at a time. Please drop the medicine you currently have with Q");
+		StartCoroutine(DropItemText());
             }
         }
 
@@ -47,5 +50,10 @@ public class pickup_item : MonoBehaviour
 
     }
 
+	IEnumerator DropItemText(){
+		droptext.SetActive(true);
+		yield return new WaitForSeconds(2);
+		droptext.SetActive(false);
+	}
 
 }

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 279729968846067456}
+  droptext: {fileID: 7609401619387448366, guid: 9e259b98cfe8436099ac87af0a07e911, type: 3}
   obj_name: cold medicine
 --- !u!61 &279729968846067457
 BoxCollider2D:

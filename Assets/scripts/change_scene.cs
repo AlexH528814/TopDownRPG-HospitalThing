@@ -21,10 +21,10 @@ public class change_scene : MonoBehaviour
 
 		if (SceneManager.GetActiveScene().name == "hospital_room")
 		{
-		SceneManager.LoadScene("medical_room");
+		SceneManager.LoadScene("medicine_room");
 		}
 		
-		if (SceneManager.GetActiveScene().name == "medical_room")
+		if (SceneManager.GetActiveScene().name == "medicine_room")
 		{
 			SceneManager.LoadScene("hospital_room");
 		}

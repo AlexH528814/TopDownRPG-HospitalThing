@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 6668935039131843714}
+  droptext: {fileID: 7609401619387448366, guid: 9e259b98cfe8436099ac87af0a07e911, type: 3}
   obj_name: pneumonia medicine
 --- !u!61 &6668935039131843715
 BoxCollider2D:

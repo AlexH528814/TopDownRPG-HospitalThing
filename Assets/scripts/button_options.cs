@@ -29,10 +29,14 @@ public class button_options : MonoBehaviour
     {
 	if (application_vars.patient1_radius){
 		if (application_vars.has_pneumonia_medicine){
+			LeaveOption();
+			Canvas.SetActive(true);
 			patient1_saved_box.SetActive(true);
 			yield return new WaitForSeconds(3f);
 			LeaveOption();
 			application_vars.patient1_saved = true;
+			application_vars.has_item = false;
+			application_vars.has_pneumonia_medicine = false;
 		}
 
 		else {
@@ -49,10 +53,14 @@ public class button_options : MonoBehaviour
     {
 	if (application_vars.patient1_radius){
 		if (application_vars.has_cold_medicine){
+			LeaveOption();
+			Canvas.SetActive(true);
 			patient1_saved_box.SetActive(true);
 			yield return new WaitForSeconds(3f);
 			LeaveOption();
 			application_vars.patient1_saved = true;
+			application_vars.has_item = false;
+			application_vars.has_pneumonia_medicine = false;
 		}
 		else {
 			LeaveOption();

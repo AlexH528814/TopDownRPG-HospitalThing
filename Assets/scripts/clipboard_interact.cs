@@ -30,6 +30,24 @@ public class clipboard_interact : MonoBehaviour
 
     private void Update()
     {
+	if (application_vars.patient1_saved && patient_name == "patient1")
+	{
+		Destroy(clipboard);
+		application_vars.patients_saved++;
+	}
+	if (application_vars.patient2_saved && patient_name == "patient2")
+	{
+		Destroy(clipboard);application_vars.patients_saved++;
+	}
+	if (application_vars.patient3_saved && patient_name == "patient3")
+	{
+		Destroy(clipboard);application_vars.patients_saved++;
+	}
+	if (application_vars.patient4_saved && patient_name == "patient4")
+	{
+		Destroy(clipboard);application_vars.patients_saved++;
+	}
+
         float distance = Vector2.Distance(playerTransform.position, interactionTransform.position);
 
         if (distance <= radius)
