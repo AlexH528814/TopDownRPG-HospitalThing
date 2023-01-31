@@ -21,7 +21,11 @@ public class button_options : MonoBehaviour
 	public GameObject patient2_saved_box;
 	public GameObject patient3_saved_box;
 	public GameObject patient4_saved_box;
-
+	
+	public GameObject patient1_killed_box;
+	public GameObject patient2_killed_box;
+	public GameObject patient3_killed_box;
+	public GameObject patient4_killed_box;
 
 	public GameObject missing_medicine;
 
@@ -71,6 +75,53 @@ public class button_options : MonoBehaviour
 		}
 	}
     }
+    
+    public IEnumerator PneumoniaOptionP2()
+    {
+	if (application_vars.patient2_radius){
+		if (application_vars.has_pneumonia_medicine){
+			LeaveOption();
+			Canvas.SetActive(true);
+			patient2_saved_box.SetActive(true);
+			yield return new WaitForSeconds(3f);
+			LeaveOption();
+			application_vars.patient2_saved = true;
+			application_vars.has_item = false;
+			application_vars.has_pneumonia_medicine = false;
+		}
+
+		else {
+			LeaveOption();
+			Canvas.SetActive(true);
+			missing_medicine.SetActive(true);
+			yield return new WaitForSeconds(3f);
+			LeaveOption();
+		}
+	}
+    }
+
+    public IEnumerator ColdOptionP2()
+    {
+	if (application_vars.patient2_radius){
+		if (application_vars.has_cold_medicine){
+			LeaveOption();
+			Canvas.SetActive(true);
+			patient2_saved_box.SetActive(true);
+			yield return new WaitForSeconds(3f);
+			LeaveOption();
+			application_vars.patient2_saved = true;
+			application_vars.has_item = false;
+			application_vars.has_pneumonia_medicine = false;
+		}
+		else {
+			LeaveOption();
+			Canvas.SetActive(true);
+			missing_medicine.SetActive(true);
+			yield return new WaitForSeconds(3f);
+			LeaveOption();
+		}
+	}
+    }
 
     public void LeaveOption()
     {
@@ -100,6 +151,17 @@ public class button_options : MonoBehaviour
     public void PneumoniaOptionPatient1()
     {
 	StartCoroutine(PneumoniaOptionP1());
+    }
+
+
+    public void ColdOptionPatient2()
+    {
+	StartCoroutine(ColdOptionP2());
+    }
+
+    public void PneumoniaOptionPatient2()
+    {
+	StartCoroutine(PneumoniaOptionP2());
     }
 
 }
