@@ -6,10 +6,10 @@ public class player_movement : MonoBehaviour
 {
 
 	const string FI_IDLE_UP = "fi_idle_up";
-    const string FI_IDLE_DOWN = "fi_idle_down";
-    const string FI_IDLE_RIGHT = "fi_idle_left";
-    const string FI_IDLE_LEFT = "fi_idle_right";
-    const string FI_WALK_UP = "fi_walk_up";
+        const string FI_IDLE_DOWN = "fi_idle_down";
+        const string FI_IDLE_RIGHT = "fi_idle_left";
+        const string FI_IDLE_LEFT = "fi_idle_right";
+        const string FI_WALK_UP = "fi_walk_up";
 	const string FI_WALK_DOWN = "fi_walk_down";
 	const string FI_WALK_RIGHT = "fi_walk_right";
 	const string FI_WALK_LEFT = "fi_walk_left";
@@ -25,8 +25,8 @@ public class player_movement : MonoBehaviour
    	// Start is called before the first frame update
     	void Start()
     	{
-			anim = GetComponent<Animator>();
-			rb = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
+		rb = GetComponent<Rigidbody2D>();
     	}
 
     	// Update is called once per frame
@@ -44,8 +44,8 @@ public class player_movement : MonoBehaviour
 		    if (vertical > 0 && horizontal == 0) { ChangeAnimationState(FI_WALK_UP); lastDir = "fi_idle_up"; }
 		    if (horizontal < 0 && vertical == 0) { ChangeAnimationState(FI_WALK_LEFT); lastDir = "fi_idle_right"; }
 		    if (horizontal > 0 && vertical == 0) { ChangeAnimationState(FI_WALK_RIGHT); lastDir = "fi_idle_left"; }
-		    if (vertical < 0 && horizontal < 0) { ChangeAnimationState(FI_WALK_DOWN); lastDir = "fi_idle_down"; }
-		    if (vertical > 0 && horizontal > 0) { ChangeAnimationState(FI_WALK_DOWN); lastDir = "fi_idle_down"; }
+		    if (vertical < 0 && horizontal < 0) { ChangeAnimationState(FI_WALK_LEFT); lastDir = "fi_idle_left"; }
+		    if (vertical > 0 && horizontal > 0) { ChangeAnimationState(FI_WALK_RIGHT); lastDir = "fi_idle_right"; }
 		    if (vertical == 0 && horizontal == 0)
 		    { 
                 switch (lastDir)

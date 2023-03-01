@@ -14,7 +14,7 @@ public class followplayer : MonoBehaviour
     {
 
         // Only follow player if they are moving up or down
-        if (player.GetComponent<Rigidbody2D>().velocity.y != 0 && transform.position.y !> 0)
+        if (player.GetComponent<Rigidbody2D>().velocity.y != 0)
         {
             // Create a target position based on player's position
             Vector3 targetPosition = new Vector3(transform.position.x, player.position.y, transform.position.z);
