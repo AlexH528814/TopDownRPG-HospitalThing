@@ -24,6 +24,5 @@ public class clipboard_interact : MonoBehaviour
 
     private void Update()
     {
-	
     }
 }
