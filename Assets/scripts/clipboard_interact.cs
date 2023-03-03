@@ -17,7 +17,7 @@ public class clipboard_interact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+	Canvas.SetActive(false);
     }
     
     void OnDrawGizmosSelected()
@@ -34,7 +34,7 @@ public class clipboard_interact : MonoBehaviour
     {
         float distance = Vector3.Distance(playerTransform.position, interactionTransform.position);
 
-        if (Input.GetMouseButtonDown(0) && distance <= radius)
+        if (Input.GetKeyDown(KeyCode.Tab) && distance <= radius)
         {
 		clipboard_ui.SetActive(!clipboard_ui.activeInHierarchy);
         	Canvas.SetActive(!Canvas.activeInHierarchy);
