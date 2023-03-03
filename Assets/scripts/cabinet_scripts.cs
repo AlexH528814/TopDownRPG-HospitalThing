@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class cabinet_scripts : MonoBehaviour
 {
@@ -11,7 +12,11 @@ public class cabinet_scripts : MonoBehaviour
     Sprite tempSprite;
 
 
+    public GameObject Canvas;
     public GameObject cabinet;
+    public Sprite cabinet_item_1;
+    public Sprite cabinet_item_2;
+    public Sprite cabinet_item_3;
 
     public float radius;
 
@@ -36,12 +41,14 @@ public class cabinet_scripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+	Image cabinet_sprite = cabinet.GetComponent<Image>();
+
         float distance = Vector3.Distance(playerTransform.position, interactionTransform.position);
 
-        if (Input.GetMouseButtonDown(0) && distance <= radius)
+        if (Input.GetKeyDown(KeyCode.Tab) && distance <= radius)
         {
             StartCoroutine(OpenCabinet(newSprite));
-        }
+	}
     }
 
     public IEnumerator OpenCabinet(Sprite newsprite)
@@ -51,5 +58,12 @@ public class cabinet_scripts : MonoBehaviour
         oldsprite = newsprite;
         sprite.sprite = newsprite;
         newSprite = tempSprite;
+	cabinet.SetActive(!cabinet.activeInHierarchy);
+	Canvas.SetActive(!Canvas.activeInHierarchy);
+    }
+
+    public void ChangeImage(){
+    
+
     }
 }
