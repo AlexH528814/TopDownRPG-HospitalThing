@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class cabinet_scripts : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class cabinet_scripts : MonoBehaviour
     public Sprite cabinet_item_1;
     public Sprite cabinet_item_2;
     public Sprite cabinet_item_3;
+	   Image cabinet_sprite; 
+    public TextMeshProUGUI Text;
 
     public float radius;
 
@@ -41,7 +44,7 @@ public class cabinet_scripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	Image cabinet_sprite = cabinet.GetComponent<Image>();
+	cabinet_sprite = cabinet.GetComponent<Image>();
 
         float distance = Vector3.Distance(playerTransform.position, interactionTransform.position);
 
@@ -62,8 +65,21 @@ public class cabinet_scripts : MonoBehaviour
 	Canvas.SetActive(!Canvas.activeInHierarchy);
     }
 
-    public void ChangeImage(){
-    
+    public void ChangeImageLeft(){
+   		if (cabinet_sprite.sprite == cabinet_item_2){
+			cabinet_sprite.sprite = cabinet_item_1; Text.text = "1/3" ;  return;}
+		if (cabinet_sprite.sprite == cabinet_item_3){
+			cabinet_sprite.sprite = cabinet_item_2; Text.text = "2/3" ; return;}
+		if (cabinet_sprite.sprite == cabinet_item_1){
+			cabinet_sprite.sprite = cabinet_item_3; Text.text = "3/3" ; return;}
+    }
 
+    public void ChangeImageRight(){
+		if (cabinet_sprite.sprite == cabinet_item_2){
+			cabinet_sprite.sprite = cabinet_item_3; Text.text = "3/3" ; return;}
+		if (cabinet_sprite.sprite == cabinet_item_3){
+			cabinet_sprite.sprite = cabinet_item_1; Text.text = "1/3" ; return;}
+		if (cabinet_sprite.sprite == cabinet_item_1){
+			cabinet_sprite.sprite = cabinet_item_2; Text.text = "2/3" ; return;}
     }
 }

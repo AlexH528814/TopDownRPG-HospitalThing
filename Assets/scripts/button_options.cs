@@ -6,7 +6,11 @@ public class button_options : MonoBehaviour
 {
 	public cabinet_scripts script;
 
-	void OnClick(){
-		script.ChangeImage();
+	public void OnClickLeft(){
+		script.ChangeImageLeft();
+	}
+	
+	public void OnClickRight(){
+		script.ChangeImageRight();
 	}
 }
