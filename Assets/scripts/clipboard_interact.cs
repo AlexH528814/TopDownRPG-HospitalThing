@@ -42,6 +42,8 @@ public class clipboard_interact : MonoBehaviour
 
     }
 
-
+    public IEnumerator Dialogue(){
+		yield return new WaitForSeconds(0.5f);
+    }
 
 }

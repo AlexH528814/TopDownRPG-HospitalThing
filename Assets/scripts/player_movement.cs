@@ -48,23 +48,22 @@ public class player_movement : MonoBehaviour
 		    if (vertical > 0 && horizontal > 0) { ChangeAnimationState(FI_WALK_RIGHT); lastDir = "fi_idle_right"; }
 		    if (vertical == 0 && horizontal == 0)
 		    { 
-                switch (lastDir)
-			    {
-				    case "fi_idle_down":
+                switch (lastDir){
+			case "fi_idle_down":
                         ChangeAnimationState(FI_IDLE_DOWN);
-                    break;
-                    case "fi_idle_up":
+                    	break;
+                    	case "fi_idle_up":
                         ChangeAnimationState(FI_IDLE_UP);
-                    break;
-                    case "fi_idle_left":
+                    	break;
+                    	case "fi_idle_left":
                         ChangeAnimationState(FI_IDLE_LEFT);
-                    break;
-                    case "fi_idle_right":
+                    	break;
+                    	case "fi_idle_right":
                         ChangeAnimationState(FI_IDLE_RIGHT);
-                    break;
+                    	break;
                 }
             }
-		    Debug.Log($"{horizontal}, {vertical}");
+		    Debug.Log($"{global_vars.medicine_1}");
 	    }
 
     	void ChangeAnimationState(string newState){

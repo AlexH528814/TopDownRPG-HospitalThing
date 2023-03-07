@@ -13,4 +13,10 @@ public class button_options : MonoBehaviour
 	public void OnClickRight(){
 		script.ChangeImageRight();
 	}
+
+	public void OnClickMiddle(){
+		script.SelectMedicine();
+	}
+
+
 }

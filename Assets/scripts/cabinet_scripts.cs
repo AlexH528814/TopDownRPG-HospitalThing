@@ -56,7 +56,7 @@ public class cabinet_scripts : MonoBehaviour
 
     public IEnumerator OpenCabinet(Sprite newsprite)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         tempSprite = oldsprite;
         oldsprite = newsprite;
         sprite.sprite = newsprite;
@@ -81,5 +81,13 @@ public class cabinet_scripts : MonoBehaviour
 			cabinet_sprite.sprite = cabinet_item_1; Text.text = "1/3" ; return;}
 		if (cabinet_sprite.sprite == cabinet_item_1){
 			cabinet_sprite.sprite = cabinet_item_2; Text.text = "2/3" ; return;}
+    }
+
+    public void SelectMedicine(){
+	      if (cabinet_sprite.sprite == cabinet_item_1) global_vars.medicine_1 = true;
+	      if (cabinet_sprite.sprite == cabinet_item_2) global_vars.medicine_2 = true;
+	      if (cabinet_sprite.sprite == cabinet_item_3) global_vars.medicine_3 = true;
+	      Debug.Log("picked up medicine");
+	      StartCoroutine(OpenCabinet(newSprite));
     }
 }
